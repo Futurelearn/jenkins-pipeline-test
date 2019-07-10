@@ -1,9 +1,11 @@
 pipeline {
-  agent { label 'ci' }
+  agent any
   stages {
-    stage('Sleep') {
+    stage("Sleep") {
       steps {
-        sh 'sleep 300'
+        sh "echo foo"
+        sh "false"
+        sh "echo bar"
       }
     }
   }
