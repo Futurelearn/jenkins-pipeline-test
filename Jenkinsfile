@@ -5,12 +5,10 @@ pipeline {
   stages {
     stage('Foo') {
       steps {
-        sh 'false'
+        sh 'echo foo'
       }
 
-      post {
-        always { notify '#notifications' }
-      }
+      post { always { notify '#notifications' } }
     }
 
   }
