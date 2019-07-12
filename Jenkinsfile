@@ -1,4 +1,4 @@
-@Library('futurelearn@lm-fix-fresh-branch-bug') _
+@Library('futurelearn@lm-reduce-parameters') _
 
 pipeline {
   agent any
@@ -9,9 +9,7 @@ pipeline {
       }
 
       post {
-        always {
-          notify currentBuild.result
-        }
+        always { notify '#notifications' }
       }
     }
 
