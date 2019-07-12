@@ -5,7 +5,7 @@ pipeline {
   stages {
     stage('Foo') {
       steps {
-        sh 'echo foo'
+        sh 'false'
       }
 
       post {
