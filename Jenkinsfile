@@ -7,12 +7,13 @@ pipeline {
       steps {
         sh 'echo foo'
       }
-    }
 
-    post {
-      always {
-        notify currentBuild.result
+      post {
+        always {
+          notify currentBuild.result
+        }
       }
     }
+
   }
 }
