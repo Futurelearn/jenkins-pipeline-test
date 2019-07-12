@@ -1,9 +1,9 @@
 @Library('futurelearn') _
 
 pipeline {
-  agent { label 'ci' }
+  agent any
   stages {
-    stage('Sleep') {
+    stage('Foo') {
       steps {
         sh 'echo foo'
       }
@@ -12,7 +12,7 @@ pipeline {
 
   post {
     always {
-      notify currentBuild.currentResult
+      notify currentBuild.result
     }
   }
 }
