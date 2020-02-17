@@ -1,5 +1,6 @@
 pipeline {
-  agent { label 'ci' }
+  agent { ecs { inheritFrom 'jenkins-agent-futurelearn' } }
+
   stages {
     stage('Sleep') {
       steps {
