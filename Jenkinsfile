@@ -3,8 +3,11 @@ pipeline {
 
   stages {
     stage('Sleep') {
-      steps {
-        sh 'sleep 300'
+        steps {
+          sshagent(credentials: ['futurelearn-ci-ssh']) {
+            sh 'ssh git@github.com'
+            sh 'sleep 300'
+        }
       }
     }
   }
